@@ -69,7 +69,7 @@ public final class ModArmorMaterials {
 	 * <p>耐久为铁盔甲的一半（头盔 82 / 胸甲 120 / 护腿 112 / 靴子 97），
 	 * 因 15 ÷ 2 = 7.5 不是整数，故在注册物品时逐件写具体数值，而不是用倍率。</p>
 	 *
-	 * <p>原版没有木质盔甲音效，这里用通用的 {@code ARMOR_EQUIP_GENERIC}。</p>
+	 * <p>原版没有木制盔甲音效，这里用通用的 {@code ARMOR_EQUIP_GENERIC}。</p>
 	 */
 	public static final DeferredHolder<ArmorMaterial, ArmorMaterial> WOOD = ARMOR_MATERIALS.register(
 			"wood",
@@ -82,7 +82,7 @@ public final class ModArmorMaterials {
 							ArmorItem.Type.BOOTS, 1),
 					// 附魔亲和度 5，远低于原版最低的铁（9）。
 					5,
-					// 无木质音效，用通用音效。
+					// 无木制音效，用通用音效。
 					SoundEvents.ARMOR_EQUIP_GENERIC,
 					// 修复材料：任意原木（minecraft:logs 标签）。
 					() -> Ingredient.of(ItemTags.LOGS),
@@ -94,7 +94,7 @@ public final class ModArmorMaterials {
 					0.0F));
 
 	/**
-	 * 铁质内衬盔甲材料：羊毛盔甲与原版铁盔甲的升级版本。
+	 * 铁制内衬盔甲材料：羊毛盔甲与原版铁盔甲的升级版本。
 	 *
 	 * <ul>
 	 *   <li>护甲值 = 原版铁盔甲 + 1（头盔 3 / 胸甲 7 / 护腿 6 / 靴子 3）；</li>
@@ -127,7 +127,7 @@ public final class ModArmorMaterials {
 					0.0F));
 
 	/**
-	 * 金质内衬甲材料：羊毛盔甲与原版金盔甲的升级版本。
+	 * 金制内衬甲材料：羊毛盔甲与原版金盔甲的升级版本。
 	 *
 	 * <ul>
 	 *   <li>护甲值 = 原版金盔甲 + 1（头盔 3 / 胸甲 6 / 护腿 4 / 靴子 2）；</li>
@@ -173,7 +173,7 @@ public final class ModArmorMaterials {
 	 * </ul>
 	 *
 	 * <p>耐久同样不按倍率换算：钻石甲倍率 33，×1.2 = 39.6 不是整数，
-	 * 因此与金质内衬甲一样在注册物品时逐件写入具体数值。</p>
+	 * 因此与金制内衬甲一样在注册物品时逐件写入具体数值。</p>
 	 */
 	public static final DeferredHolder<ArmorMaterial, ArmorMaterial> DIAMOND_LINING = ARMOR_MATERIALS.register(
 			"diamond_lining",
@@ -242,40 +242,40 @@ public final class ModArmorMaterials {
 	// ============================================================
 
 	/**
-	 * 铁质重型甲材料。
+	 * 铁制重型甲材料。
 	 *
 	 * <ul>
-	 *   <li>护甲值：铁质内衬甲 (3/7/6/3) 各部位 +2/+4/+3/+2 → 5/11/9/5；</li>
-	 *   <li>韧性 2.0、附魔亲和度 9，均与铁质内衬甲相同；</li>
+	 *   <li>护甲值：铁制内衬甲 (3/7/6/3) 各部位 +2/+4/+3/+2 → 5/11/9/5；</li>
+	 *   <li>韧性 2.0、附魔亲和度 9，均与铁制内衬甲相同；</li>
 	 *   <li>击退抗性 0.0，修复材料铁锭，铁甲音效。</li>
 	 * </ul>
 	 */
 	public static final DeferredHolder<ArmorMaterial, ArmorMaterial> IRON_HEAVY = ARMOR_MATERIALS.register(
 			"iron_heavy",
 			() -> new ArmorMaterial(
-					// 铁质内衬甲 3/7/6/3，各部位 +2/+4/+3/+2。
+					// 铁制内衬甲 3/7/6/3，各部位 +2/+4/+3/+2。
 					Map.of(
 							ArmorItem.Type.HELMET, 5,
 							ArmorItem.Type.CHESTPLATE, 11,
 							ArmorItem.Type.LEGGINGS, 9,
 							ArmorItem.Type.BOOTS, 5),
-					// 附魔亲和度沿用铁质内衬甲。
+					// 附魔亲和度沿用铁制内衬甲。
 					9,
 					SoundEvents.ARMOR_EQUIP_IRON,
 					() -> Ingredient.of(Items.IRON_INGOT),
 					List.of(new ArmorMaterial.Layer(
 							ResourceLocation.fromNamespaceAndPath(ArmorAddon.MOD_ID, "iron_heavy"), "", false)),
-					// 韧性沿用铁质内衬甲。
+					// 韧性沿用铁制内衬甲。
 					2.0F,
-					// 击退抗性沿用铁质内衬甲。
+					// 击退抗性沿用铁制内衬甲。
 					0.0F));
 
 	/**
 	 * 金制重型甲材料。
 	 *
 	 * <ul>
-	 *   <li>护甲值：金质内衬甲 (3/6/4/2) → 5/10/7/4；</li>
-	 *   <li>韧性 2.0、附魔亲和度 25，均与金质内衬甲相同。</li>
+	 *   <li>护甲值：金制内衬甲 (3/6/4/2) → 5/10/7/4；</li>
+	 *   <li>韧性 2.0、附魔亲和度 25，均与金制内衬甲相同。</li>
 	 * </ul>
 	 */
 	public static final DeferredHolder<ArmorMaterial, ArmorMaterial> GOLD_HEAVY = ARMOR_MATERIALS.register(

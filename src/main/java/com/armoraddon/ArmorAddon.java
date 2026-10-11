@@ -37,14 +37,14 @@ public final class ArmorAddon {
 		ModItems.register(modEventBus);
 
 		modEventBus.addListener(this::addCreativeTabItems);
-		// 铁质内衬甲合成时继承铁盔甲附魔 / 名称并同步损耗耐久。
+		// 铁制内衬甲合成时继承铁盔甲附魔 / 名称并同步损耗耐久。
 		NeoForge.EVENT_BUS.addListener(ModCraftingEvents::onItemCrafted);
 		// 羊毛靴子：移动时不被幽匿感测体 / 坚守者探测到。
 		NeoForge.EVENT_BUS.addListener(WoolBootsEvents::onVanillaGameEvent);
 		// 羊毛盔甲 / 内衬甲 / 重型甲：受到音波类伤害时每件减 1 点。
 		NeoForge.EVENT_BUS.addListener(SonicResistEvents::onIncomingDamage);
 
-		LOGGER.info("[盔甲附加] NeoForge 版模组已加载，木制 / 羊毛盔甲、铁质 / 金质 / 钻石 / 合金内衬甲"
+		LOGGER.info("[盔甲附加] NeoForge 版模组已加载，木制 / 羊毛盔甲、铁制 / 金制 / 钻石 / 合金内衬甲"
 				+ "与四套重型甲已注册；羊毛 / 内衬 / 重型共九套具备音波抗性（每件减 1 点）。");
 	}
 

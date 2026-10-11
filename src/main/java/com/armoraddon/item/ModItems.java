@@ -19,7 +19,7 @@ public final class ModItems {
 	public static final int WOOL_DURABILITY_MULTIPLIER = 10;
 
 	/**
-	 * 铁质内衬盔甲的耐久度倍率：原版铁盔甲为 15，此处 18 正好是 +20%
+	 * 铁制内衬盔甲的耐久度倍率：原版铁盔甲为 15，此处 18 正好是 +20%
 	 * （头盔 198 / 胸甲 288 / 护腿 270 / 靴子 234）。
 	 */
 	public static final int IRON_LINING_DURABILITY_MULTIPLIER = 18;
@@ -75,7 +75,7 @@ public final class ModItems {
 					new Item.Properties().durability(
 							ArmorItem.Type.BOOTS.getDurability(WOOL_DURABILITY_MULTIPLIER))));
 
-	// ---- 铁质内衬盔甲（羊毛盔甲 + 铁盔甲的升级版本）----
+	// ---- 铁制内衬盔甲（羊毛盔甲 + 铁盔甲的升级版本）----
 	public static final DeferredItem<Item> IRON_LINING_HELMET =
 			registerArmor("iron_lining_helmet", ModArmorMaterials.IRON_LINING, ArmorItem.Type.HELMET, IRON_LINING_DURABILITY_MULTIPLIER);
 	public static final DeferredItem<Item> IRON_LINING_CHESTPLATE =
@@ -85,7 +85,7 @@ public final class ModItems {
 	public static final DeferredItem<Item> IRON_LINING_BOOTS =
 			registerArmor("iron_lining_boots", ModArmorMaterials.IRON_LINING, ArmorItem.Type.BOOTS, IRON_LINING_DURABILITY_MULTIPLIER);
 
-	// ---- 金质内衬甲（羊毛盔甲 + 金盔甲的升级版本）----
+	// ---- 金制内衬甲（羊毛盔甲 + 金盔甲的升级版本）----
 	// 金盔甲的耐久倍率是 7，×1.2 = 8.4 不是整数，所以这里逐件直接写
 	// 「金盔甲耐久 +20%」的具体值：
 	//   头盔 11×7=77  → 92
@@ -150,7 +150,7 @@ public final class ModItems {
 	//  耐久逐件写具体值（×1.5 常出现 .5，按惯例截断取整）。
 	// ============================================================
 
-	// ---- 铁质重型甲（铁质内衬甲 198/288/270/234 ×1.5）----
+	// ---- 铁制重型甲（铁制内衬甲 198/288/270/234 ×1.5）----
 	// 297 / 432 / 405 / 351 均为整数。
 	public static final DeferredItem<Item> IRON_HEAVY_HELMET =
 			registerArmorWithDurability("iron_heavy_helmet", ModArmorMaterials.IRON_HEAVY,
@@ -165,7 +165,7 @@ public final class ModItems {
 			registerArmorWithDurability("iron_heavy_boots", ModArmorMaterials.IRON_HEAVY,
 					ArmorItem.Type.BOOTS, 351);
 
-	// ---- 金制重型甲（金质内衬甲 92/134/126/109 ×1.5）----
+	// ---- 金制重型甲（金制内衬甲 92/134/126/109 ×1.5）----
 	// 138 / 201 / 189 / 163.5→163
 	public static final DeferredItem<Item> GOLD_HEAVY_HELMET =
 			registerArmorWithDurability("gold_heavy_helmet", ModArmorMaterials.GOLD_HEAVY,
