@@ -245,7 +245,7 @@ public final class ModArmorMaterials {
 	 * 铁制重型甲材料。
 	 *
 	 * <ul>
-	 *   <li>护甲值：铁制内衬甲 (3/7/6/3) 各部位 +2/+4/+3/+2 → 5/11/9/5；</li>
+	 *   <li>护甲值：铁制内衬甲 (3/7/6/3) 各部位 +1/+2/+1/+1 → 4/9/7/4；</li>
 	 *   <li>韧性 2.0、附魔亲和度 9，均与铁制内衬甲相同；</li>
 	 *   <li>击退抗性 0.0，修复材料铁锭，铁甲音效。</li>
 	 * </ul>
@@ -253,12 +253,12 @@ public final class ModArmorMaterials {
 	public static final DeferredHolder<ArmorMaterial, ArmorMaterial> IRON_HEAVY = ARMOR_MATERIALS.register(
 			"iron_heavy",
 			() -> new ArmorMaterial(
-					// 铁制内衬甲 3/7/6/3，各部位 +2/+4/+3/+2。
+					// 铁制内衬甲 3/7/6/3，各部位 +1/+2/+1/+1。
 					Map.of(
-							ArmorItem.Type.HELMET, 5,
-							ArmorItem.Type.CHESTPLATE, 11,
-							ArmorItem.Type.LEGGINGS, 9,
-							ArmorItem.Type.BOOTS, 5),
+							ArmorItem.Type.HELMET, 4,
+							ArmorItem.Type.CHESTPLATE, 9,
+							ArmorItem.Type.LEGGINGS, 7,
+							ArmorItem.Type.BOOTS, 4),
 					// 附魔亲和度沿用铁制内衬甲。
 					9,
 					SoundEvents.ARMOR_EQUIP_IRON,
@@ -274,18 +274,19 @@ public final class ModArmorMaterials {
 	 * 金制重型甲材料。
 	 *
 	 * <ul>
-	 *   <li>护甲值：金制内衬甲 (3/6/4/2) → 5/10/7/4；</li>
+	 *   <li>护甲值：金制内衬甲 (3/6/4/2) 各部位 +1/+2/+1/+1 → 4/8/5/3；</li>
 	 *   <li>韧性 2.0、附魔亲和度 25，均与金制内衬甲相同。</li>
 	 * </ul>
 	 */
 	public static final DeferredHolder<ArmorMaterial, ArmorMaterial> GOLD_HEAVY = ARMOR_MATERIALS.register(
 			"gold_heavy",
 			() -> new ArmorMaterial(
+					// 金制内衬甲 3/6/4/2，各部位 +1/+2/+1/+1。
 					Map.of(
-							ArmorItem.Type.HELMET, 5,
-							ArmorItem.Type.CHESTPLATE, 10,
-							ArmorItem.Type.LEGGINGS, 7,
-							ArmorItem.Type.BOOTS, 4),
+							ArmorItem.Type.HELMET, 4,
+							ArmorItem.Type.CHESTPLATE, 8,
+							ArmorItem.Type.LEGGINGS, 5,
+							ArmorItem.Type.BOOTS, 3),
 					25,
 					SoundEvents.ARMOR_EQUIP_GOLD,
 					() -> Ingredient.of(Items.GOLD_INGOT),

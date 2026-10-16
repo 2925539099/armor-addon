@@ -73,20 +73,22 @@ def parse_items() -> list[dict]:
             for m in re.finditer(r'int\s+([A-Z_]+_DURABILITY_MULTIPLIER)\s*=\s*(\d+)', src)}
 
     items: dict[str, dict] = {}
-    # registerArmor("wool_helmet", ModArmorMaterials.WOOL, ArmorItem.Type.HELMET, WOOL_DURABILITY_MULTIPLIER)
-    # 注意：材质参数写成 ModArmorMaterials.XXX，含点号，所以用 [\w.]+ 而不是 \w+
-    for m in re.finditer(
-        r'registerArmor\(\s*"([a-z_]+)"\s*,\s*[\w.]+\s*,\s*ArmorItem\.Type\.(\w+)\s*,\s*(\w+)\s*\)', src):
-        name, slot, arg = m.group(1), m.group(2), m.group(3)
-        dur = int(arg) if arg.isdigit() else BASE_DURABILITY[slot] * mult[arg]
-        items[name] = {"slot": slot, "durability": dur}
 
-    # registerArmorWithDurability("gold_lining_helmet", ..., ArmorItem.Type.HELMET, 92)
-    # registerFireResistantArmor("alloy_lining_helmet", ..., ArmorItem.Type.HELMET, 488)
+    # 盔甲物品统一按参数模式匹配，不依赖具体是哪个 register 辅助方法 ——
+    # 之前写死函数名，导致新增 registerPiglinNeutralArmor 之类的包装后漏抓。
+    #   "名字", ModArmorMaterials.材质, ArmorItem.Type.部位, 耐久
+    # 材质参数含点号，所以用 [\w.]+；耐久可能是字面数字，也可能是 _DURABILITY_MULTIPLIER 常量。
     for m in re.finditer(
-        r'register(?:ArmorWithDurability|FireResistantArmor)\(\s*"([a-z_]+)"\s*,\s*[\w.]+\s*,'
-        r'\s*ArmorItem\.Type\.(\w+)\s*,\s*(\d+)\s*\)', src):
-        items[m.group(1)] = {"slot": m.group(2), "durability": int(m.group(3))}
+        r'"([a-z_]+)"\s*,\s*ModArmorMaterials\.[\w.]+\s*,\s*'
+        r'ArmorItem\.Type\.(\w+)\s*,\s*(\w+)\s*\)', src):
+        name, slot, arg = m.group(1), m.group(2), m.group(3)
+        if arg.isdigit():
+            dur = int(arg)
+        elif arg in mult:
+            dur = BASE_DURABILITY[slot] * mult[arg]
+        else:
+            continue
+        items[name] = {"slot": slot, "durability": dur}
 
     # 羊毛靴子走自定义类：ITEMS.register("wool_boots", () -> new WoolBootsItem(...))，单独补
     if "wool_boots" not in items:

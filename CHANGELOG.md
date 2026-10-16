@@ -5,6 +5,37 @@
 格式依据 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，
 版本号遵循语义化版本 `主.次.修正`。
 
+## [1.2.5]
+
+### 新增机制
+
+- **猪灵中立**：金制甲与合金甲穿戴时猪灵不再主动攻击。
+  范围是 `gold_lining`、`gold_heavy`、`alloy_lining`、`alloy_heavy` 四套共 16 件。
+  铁制与钻石制不参与。
+
+  > 原版判定写在 NeoForge 的 `IItemExtension#makesPiglinsNeutral` 里，
+  > 写死只认 `ArmorMaterials.GOLD`：
+  > ```java
+  > return stack.getItem() instanceof ArmorItem
+  >         && ((ArmorItem) stack.getItem()).getMaterial() == ArmorMaterials.GOLD;
+  > ```
+  > `ArmorMaterial` 是固定七字段的 record，没有开关可以打开这个行为，
+  > 因此改用自定义的 `PiglinNeutralArmorItem` 覆盖该方法。
+
+### 平衡调整
+
+- **铁制重型甲与金制重型甲的护甲值下调**。护甲加成由「+2 / +4 / +3 / +2」改为
+  「+1 / +2 / +1 / +1」（按头盔 / 胸甲 / 护腿 / 靴子）：
+
+  | 套装 | 原护甲值 | 现护甲值 | 依据 |
+  | --- | --- | --- | --- |
+  | 铁制重型甲 | 5 / 11 / 9 / 5 | **4 / 9 / 7 / 4** | 铁制内衬甲 3/7/6/3 + 1/2/1/1 |
+  | 金制重型甲 | 5 / 10 / 7 / 4 | **4 / 8 / 5 / 3** | 金制内衬甲 3/6/4/2 + 1/2/1/1 |
+  | 钻石重型甲 | 6 / 13 / 10 / 6 | 不变 | 仍为 +2 / +4 / +3 / +2 |
+  | 合金重型甲 | 6 / 13 / 10 / 6 | 不变 | 仍为 +2 / +4 / +3 / +2 |
+
+  耐久、韧性、附魔亲和度、击退抗性均未变动。
+
 ## [1.2.4]
 
 ### 变更
@@ -190,6 +221,7 @@
 - 装备外观由 `textures/models/armor/<材质名>_layer_1.png` / `_layer_2.png` 提供。
 - 内衬甲系列为单一固定材质，**不支持染色**。
 
+[1.2.5]: https://github.com/2925539099/armor-addon/compare/1.2.4...1.2.5
 [1.2.4]: https://github.com/2925539099/armor-addon/compare/1.2.3...1.2.4
 [1.2.3]: https://github.com/2925539099/armor-addon/compare/1.2.2...1.2.3
 [1.2.2]: https://github.com/2925539099/armor-addon/compare/1.2.1...1.2.2

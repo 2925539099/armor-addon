@@ -93,16 +93,16 @@ public final class ModItems {
 	//   护腿 15×7=105 → 126
 	//   靴子 13×7=91  → 109
 	public static final DeferredItem<Item> GOLD_LINING_HELMET =
-			registerArmorWithDurability("gold_lining_helmet", ModArmorMaterials.GOLD_LINING,
+			registerPiglinNeutralArmor("gold_lining_helmet", ModArmorMaterials.GOLD_LINING,
 					ArmorItem.Type.HELMET, 92);
 	public static final DeferredItem<Item> GOLD_LINING_CHESTPLATE =
-			registerArmorWithDurability("gold_lining_chestplate", ModArmorMaterials.GOLD_LINING,
+			registerPiglinNeutralArmor("gold_lining_chestplate", ModArmorMaterials.GOLD_LINING,
 					ArmorItem.Type.CHESTPLATE, 134);
 	public static final DeferredItem<Item> GOLD_LINING_LEGGINGS =
-			registerArmorWithDurability("gold_lining_leggings", ModArmorMaterials.GOLD_LINING,
+			registerPiglinNeutralArmor("gold_lining_leggings", ModArmorMaterials.GOLD_LINING,
 					ArmorItem.Type.LEGGINGS, 126);
 	public static final DeferredItem<Item> GOLD_LINING_BOOTS =
-			registerArmorWithDurability("gold_lining_boots", ModArmorMaterials.GOLD_LINING,
+			registerPiglinNeutralArmor("gold_lining_boots", ModArmorMaterials.GOLD_LINING,
 					ArmorItem.Type.BOOTS, 109);
 
 	// ---- 钻石内衬甲（羊毛盔甲 + 钻石盔甲的升级版本）----
@@ -132,16 +132,16 @@ public final class ModItems {
 	//   靴子 13×37=481 → 577
 	// 另外与原版下界合金盔甲一致带抗火（物品不会被火烧毁）。
 	public static final DeferredItem<Item> ALLOY_LINING_HELMET =
-			registerFireResistantArmor("alloy_lining_helmet", ModArmorMaterials.ALLOY_LINING,
+			registerPiglinNeutralFireResistantArmor("alloy_lining_helmet", ModArmorMaterials.ALLOY_LINING,
 					ArmorItem.Type.HELMET, 488);
 	public static final DeferredItem<Item> ALLOY_LINING_CHESTPLATE =
-			registerFireResistantArmor("alloy_lining_chestplate", ModArmorMaterials.ALLOY_LINING,
+			registerPiglinNeutralFireResistantArmor("alloy_lining_chestplate", ModArmorMaterials.ALLOY_LINING,
 					ArmorItem.Type.CHESTPLATE, 710);
 	public static final DeferredItem<Item> ALLOY_LINING_LEGGINGS =
-			registerFireResistantArmor("alloy_lining_leggings", ModArmorMaterials.ALLOY_LINING,
+			registerPiglinNeutralFireResistantArmor("alloy_lining_leggings", ModArmorMaterials.ALLOY_LINING,
 					ArmorItem.Type.LEGGINGS, 666);
 	public static final DeferredItem<Item> ALLOY_LINING_BOOTS =
-			registerFireResistantArmor("alloy_lining_boots", ModArmorMaterials.ALLOY_LINING,
+			registerPiglinNeutralFireResistantArmor("alloy_lining_boots", ModArmorMaterials.ALLOY_LINING,
 					ArmorItem.Type.BOOTS, 577);
 
 	// ============================================================
@@ -168,16 +168,16 @@ public final class ModItems {
 	// ---- 金制重型甲（金制内衬甲 92/134/126/109 ×1.5）----
 	// 138 / 201 / 189 / 163.5→163
 	public static final DeferredItem<Item> GOLD_HEAVY_HELMET =
-			registerArmorWithDurability("gold_heavy_helmet", ModArmorMaterials.GOLD_HEAVY,
+			registerPiglinNeutralArmor("gold_heavy_helmet", ModArmorMaterials.GOLD_HEAVY,
 					ArmorItem.Type.HELMET, 138);
 	public static final DeferredItem<Item> GOLD_HEAVY_CHESTPLATE =
-			registerArmorWithDurability("gold_heavy_chestplate", ModArmorMaterials.GOLD_HEAVY,
+			registerPiglinNeutralArmor("gold_heavy_chestplate", ModArmorMaterials.GOLD_HEAVY,
 					ArmorItem.Type.CHESTPLATE, 201);
 	public static final DeferredItem<Item> GOLD_HEAVY_LEGGINGS =
-			registerArmorWithDurability("gold_heavy_leggings", ModArmorMaterials.GOLD_HEAVY,
+			registerPiglinNeutralArmor("gold_heavy_leggings", ModArmorMaterials.GOLD_HEAVY,
 					ArmorItem.Type.LEGGINGS, 189);
 	public static final DeferredItem<Item> GOLD_HEAVY_BOOTS =
-			registerArmorWithDurability("gold_heavy_boots", ModArmorMaterials.GOLD_HEAVY,
+			registerPiglinNeutralArmor("gold_heavy_boots", ModArmorMaterials.GOLD_HEAVY,
 					ArmorItem.Type.BOOTS, 163);
 
 	// ---- 钻石重型甲（钻石内衬甲 435/633/594/514 ×1.5）----
@@ -198,16 +198,16 @@ public final class ModItems {
 	// ---- 合金重型甲（合金内衬甲 488/710/666/577 ×1.5）----
 	// 732 / 1065 / 999 / 865.5→865，同样带抗火。
 	public static final DeferredItem<Item> ALLOY_HEAVY_HELMET =
-			registerFireResistantArmor("alloy_heavy_helmet", ModArmorMaterials.ALLOY_HEAVY,
+			registerPiglinNeutralFireResistantArmor("alloy_heavy_helmet", ModArmorMaterials.ALLOY_HEAVY,
 					ArmorItem.Type.HELMET, 732);
 	public static final DeferredItem<Item> ALLOY_HEAVY_CHESTPLATE =
-			registerFireResistantArmor("alloy_heavy_chestplate", ModArmorMaterials.ALLOY_HEAVY,
+			registerPiglinNeutralFireResistantArmor("alloy_heavy_chestplate", ModArmorMaterials.ALLOY_HEAVY,
 					ArmorItem.Type.CHESTPLATE, 1065);
 	public static final DeferredItem<Item> ALLOY_HEAVY_LEGGINGS =
-			registerFireResistantArmor("alloy_heavy_leggings", ModArmorMaterials.ALLOY_HEAVY,
+			registerPiglinNeutralFireResistantArmor("alloy_heavy_leggings", ModArmorMaterials.ALLOY_HEAVY,
 					ArmorItem.Type.LEGGINGS, 999);
 	public static final DeferredItem<Item> ALLOY_HEAVY_BOOTS =
-			registerFireResistantArmor("alloy_heavy_boots", ModArmorMaterials.ALLOY_HEAVY,
+			registerPiglinNeutralFireResistantArmor("alloy_heavy_boots", ModArmorMaterials.ALLOY_HEAVY,
 					ArmorItem.Type.BOOTS, 865);
 
 	private ModItems() {
@@ -238,6 +238,30 @@ public final class ModItems {
 	private static DeferredItem<Item> registerFireResistantArmor(String name, Holder<ArmorMaterial> material,
 																 ArmorItem.Type type, int durability) {
 		return ITEMS.register(name, () -> new ArmorItem(
+				material,
+				type,
+				new Item.Properties().fireResistant().durability(durability)));
+	}
+
+	/**
+	 * 猪灵中立版盔甲（金制与合金制使用）。
+	 *
+	 * <p>NeoForge 的 {@code makesPiglinsNeutral} 默认实现只认原版的
+	 * {@code ArmorMaterials.GOLD}，本模组的材质不在其中，所以要换成
+	 * {@link PiglinNeutralArmorItem} 覆盖该方法，穿上后猪灵才会保持中立。</p>
+	 */
+	private static DeferredItem<Item> registerPiglinNeutralArmor(String name, Holder<ArmorMaterial> material,
+																 ArmorItem.Type type, int durability) {
+		return ITEMS.register(name, () -> new PiglinNeutralArmorItem(
+				material,
+				type,
+				new Item.Properties().durability(durability)));
+	}
+
+	/** 同上，但额外带抗火（合金制用）。 */
+	private static DeferredItem<Item> registerPiglinNeutralFireResistantArmor(String name, Holder<ArmorMaterial> material,
+																			   ArmorItem.Type type, int durability) {
+		return ITEMS.register(name, () -> new PiglinNeutralArmorItem(
 				material,
 				type,
 				new Item.Properties().fireResistant().durability(durability)));
