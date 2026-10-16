@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.armoraddon.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "ItemCombinerMenuAccessor",
+    "SmithingMenuMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

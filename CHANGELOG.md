@@ -5,6 +5,41 @@
 格式依据 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，
 版本号遵循语义化版本 `主.次.修正`。
 
+## [1.3.1]
+
+### 修复
+
+- **锻造台配方现在也会继承基底数据。** 1.3.0 时只有工作台能做到这一点，
+  锻造台的合金内衬甲、合金重型甲、合金超重型甲都不继承附魔与耐久。
+
+  原因是 `PlayerEvent.ItemCraftedEvent` 只由工作台的 `ResultSlot` 触发：
+
+  ```java
+  // ResultSlot#checkTakeAchievements —— NeoForge 合成事件的唯一触发点
+  EventHooks.firePlayerCraftingEvent(this.player, stack, this.craftSlots);
+  ```
+
+  而锻造台走的是 `ItemCombinerMenu` 里的匿名 `Slot`，其 `onTake` 只调用
+  `SmithingMenu#onTake`，不 fire 任何事件；NeoForge 也没有提供锻造台侧的钩子。
+
+  现在新增两个 Mixin 补上：
+
+  | 类 | 作用 |
+  | --- | --- |
+  | `SmithingMenuMixin` | 在 `SmithingMenu#onTake` 开头调用继承逻辑。选 HEAD 是因为此时三格材料尚未被 `shrinkStackInSlot` 扣减，仍能读到基底。 |
+  | `ItemCombinerMenuAccessor` | 读取父类 `ItemCombinerMenu` 的 `inputSlots`。 |
+
+  > 这里踩了一个坑：`inputSlots` 声明在父类上，用 `@Shadow` 读会抛
+  > `InvalidMixinException: @Shadow field inputSlots was not located in the target class`
+  > —— Mixin 只查找**目标类自身声明**的成员，不查父类。所以改用 Accessor Mixin。
+
+### 变更
+
+- **继承逻辑改为按材质判断。** 原先按物品逐个列举，现在只要是材质不属于木制或羊毛的
+  盔甲就视为升级产物，基底取网格里第一件盔甲。以后新增套装不必再改这段代码。
+  按此规则，**重型甲（工作台升级来的那批）现在也会继承内衬甲的数据**，
+  这是 1.3.0 之前就存在的缺口，一并修好。
+
 ## [1.3.0]
 
 ### 新增
@@ -45,14 +80,6 @@
 
 - **锻造台**（4 条）：钻石超重型甲 + 下界合金块 + 盔甲升级模板 → 合金超重型甲，
   与既有的「钻石重型甲 → 合金重型甲」路线同构。
-
-### 已知限制
-
-- **锻造台配方不会继承基底数据。** `PlayerEvent.ItemCraftedEvent` 只由工作台的
-  `ResultSlot` 触发；锻造台走的是 `ItemCombinerMenu` 里的匿名 `Slot`，其 `onTake`
-  只调用 `SmithingMenu#onTake`，不 fire 任何 NeoForge 事件，NeoForge 也没有提供
-  锻造台侧的替代钩子。因此合金超重型甲（以及既有的合金内衬甲、合金重型甲）
-  经锻造台升级时不继承附魔与耐久，经工作台合成时正常继承。
 
 ## [1.2.5]
 
@@ -270,6 +297,7 @@
 - 装备外观由 `textures/models/armor/<材质名>_layer_1.png` / `_layer_2.png` 提供。
 - 内衬甲系列为单一固定材质，**不支持染色**。
 
+[1.3.1]: https://github.com/2925539099/armor-addon/compare/1.3.0...1.3.1
 [1.3.0]: https://github.com/2925539099/armor-addon/compare/1.2.5...1.3.0
 [1.2.5]: https://github.com/2925539099/armor-addon/compare/1.2.4...1.2.5
 [1.2.4]: https://github.com/2925539099/armor-addon/compare/1.2.3...1.2.4

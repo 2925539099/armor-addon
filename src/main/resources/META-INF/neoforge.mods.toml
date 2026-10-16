@@ -8,6 +8,11 @@ version = "${version}"
 displayName = "盔甲附加 (Armor Addon)"
 description = '''添加了一些额外的盔甲'''
 
+# 熔炉台的产物继承（SmithingMenuMixin）。
+# NeoForge 没有锻造台侧的合成事件，只能注入 SmithingMenu#onTake 来补。
+[[mixins]]
+config = "armor_addon.mixins.json"
+
 [[dependencies.armor_addon]]
 modId = "neoforge"
 type = "required"
