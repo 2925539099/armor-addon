@@ -39,6 +39,13 @@ public final class SonicResistEvents {
 			ModArmorMaterials.DIAMOND_HEAVY,
 			ModArmorMaterials.ALLOY_HEAVY);
 
+	/** 超重型甲的四个材质。它们也属于羊毛系，但减免翻倍。 */
+	private static final List<Holder<ArmorMaterial>> ULTRA_HEAVY = List.of(
+			ModArmorMaterials.IRON_ULTRA_HEAVY,
+			ModArmorMaterials.GOLD_ULTRA_HEAVY,
+			ModArmorMaterials.DIAMOND_ULTRA_HEAVY,
+			ModArmorMaterials.ALLOY_ULTRA_HEAVY);
+
 	/** 参与判定的四个盔甲槽位。 */
 	private static final List<EquipmentSlot> ARMOR_SLOTS = List.of(
 			EquipmentSlot.HEAD,
@@ -63,20 +70,44 @@ public final class SonicResistEvents {
 			return;
 		}
 
-		int pieces = 0;
+		int reduction = 0;
 
 		for (EquipmentSlot slot : ARMOR_SLOTS) {
-			if (isWoolLineArmor(player.getItemBySlot(slot))) {
-				pieces++;
-			}
+			reduction += reductionOf(player.getItemBySlot(slot));
 		}
 
-		if (pieces <= 0) {
+		if (reduction <= 0) {
 			return;
 		}
 
-		// 每件减 1 点，最低减到 0。
-		event.setAmount(Math.max(0.0F, event.getAmount() - pieces));
+		// 最低减到 0。
+		event.setAmount(Math.max(0.0F, event.getAmount() - reduction));
+	}
+
+	/** 羊毛系每件减 1 点；超重型甲是该系列的再升级，每件减 2 点。 */
+	private static int reductionOf(ItemStack stack) {
+		if (isUltraHeavyArmor(stack)) {
+			return 2;
+		}
+
+		return isWoolLineArmor(stack) ? 1 : 0;
+	}
+
+	/** 是否为超重型甲。 */
+	private static boolean isUltraHeavyArmor(ItemStack stack) {
+		if (!(stack.getItem() instanceof ArmorItem armor)) {
+			return false;
+		}
+
+		Holder<ArmorMaterial> material = armor.getMaterial();
+
+		for (Holder<ArmorMaterial> ultraHeavy : ULTRA_HEAVY) {
+			if (material == ultraHeavy) {
+				return true;
+			}
+		}
+
+		return false;
 	}
 
 	/**

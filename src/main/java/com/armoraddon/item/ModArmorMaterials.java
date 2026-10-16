@@ -344,6 +344,121 @@ public final class ModArmorMaterials {
 					5.0F,
 					0.1F));
 
+	// ============================================================
+	//  超重型甲系列
+	//
+	//  在重型甲基础上再强化一级：
+	//    护甲值 = 对应重型甲 + 该材质的加成（金 +1/+3/+2/+1、铁 +2/+4/+3/+2、
+	//             钻石与合金 +3/+5/+4/+3，按头盔 / 胸甲 / 护腿 / 靴子）；
+	//    韧性   = 对应重型甲 + 2.0；
+	//    击退抗性 = 对应重型甲 + 0.1（等同于再叠一层下界合金甲的击退抗性）。
+	//  附魔亲和度、音效、修复材料均沿用对应重型甲。
+	//  耐久 ×1.1 在注册物品时逐件写具体数值。
+	//
+	//  金制与合金制额外具备猪灵中立（见 PiglinNeutralArmorItem）。
+	// ============================================================
+
+	/**
+	 * 金制超重型甲材料。
+	 *
+	 * <ul>
+	 *   <li>护甲值：金制重型甲 (4/8/5/3) 各部位 +1/+3/+2/+1 → 5/11/7/4；</li>
+	 *   <li>韧性：金制重型甲 2.0 + 2.0 = 4.0；</li>
+	 *   <li>击退抗性：金制重型甲 0.0 + 0.1 = 0.1。</li>
+	 * </ul>
+	 */
+	public static final DeferredHolder<ArmorMaterial, ArmorMaterial> GOLD_ULTRA_HEAVY = ARMOR_MATERIALS.register(
+			"gold_ultra_heavy",
+			() -> new ArmorMaterial(
+					Map.of(
+							ArmorItem.Type.HELMET, 5,
+							ArmorItem.Type.CHESTPLATE, 11,
+							ArmorItem.Type.LEGGINGS, 7,
+							ArmorItem.Type.BOOTS, 4),
+					25,
+					SoundEvents.ARMOR_EQUIP_GOLD,
+					() -> Ingredient.of(Items.GOLD_INGOT),
+					List.of(new ArmorMaterial.Layer(
+							ResourceLocation.fromNamespaceAndPath(ArmorAddon.MOD_ID, "gold_ultra_heavy"), "", false)),
+					4.0F,
+					0.1F));
+
+	/**
+	 * 铁制超重型甲材料。
+	 *
+	 * <ul>
+	 *   <li>护甲值：铁制重型甲 (4/9/7/4) 各部位 +2/+4/+3/+2 → 6/13/10/6；</li>
+	 *   <li>韧性：铁制重型甲 2.0 + 2.0 = 4.0；</li>
+	 *   <li>击退抗性：铁制重型甲 0.0 + 0.1 = 0.1。</li>
+	 * </ul>
+	 */
+	public static final DeferredHolder<ArmorMaterial, ArmorMaterial> IRON_ULTRA_HEAVY = ARMOR_MATERIALS.register(
+			"iron_ultra_heavy",
+			() -> new ArmorMaterial(
+					Map.of(
+							ArmorItem.Type.HELMET, 6,
+							ArmorItem.Type.CHESTPLATE, 13,
+							ArmorItem.Type.LEGGINGS, 10,
+							ArmorItem.Type.BOOTS, 6),
+					9,
+					SoundEvents.ARMOR_EQUIP_IRON,
+					() -> Ingredient.of(Items.IRON_INGOT),
+					List.of(new ArmorMaterial.Layer(
+							ResourceLocation.fromNamespaceAndPath(ArmorAddon.MOD_ID, "iron_ultra_heavy"), "", false)),
+					4.0F,
+					0.1F));
+
+	/**
+	 * 钻石超重型甲材料。
+	 *
+	 * <ul>
+	 *   <li>护甲值：钻石重型甲 (6/13/10/6) 各部位 +3/+5/+4/+3 → 9/18/14/9；</li>
+	 *   <li>韧性：钻石重型甲 4.0 + 2.0 = 6.0；</li>
+	 *   <li>击退抗性：钻石重型甲 0.0 + 0.1 = 0.1。</li>
+	 * </ul>
+	 */
+	public static final DeferredHolder<ArmorMaterial, ArmorMaterial> DIAMOND_ULTRA_HEAVY = ARMOR_MATERIALS.register(
+			"diamond_ultra_heavy",
+			() -> new ArmorMaterial(
+					Map.of(
+							ArmorItem.Type.HELMET, 9,
+							ArmorItem.Type.CHESTPLATE, 18,
+							ArmorItem.Type.LEGGINGS, 14,
+							ArmorItem.Type.BOOTS, 9),
+					10,
+					SoundEvents.ARMOR_EQUIP_DIAMOND,
+					() -> Ingredient.of(Items.DIAMOND),
+					List.of(new ArmorMaterial.Layer(
+							ResourceLocation.fromNamespaceAndPath(ArmorAddon.MOD_ID, "diamond_ultra_heavy"), "", false)),
+					6.0F,
+					0.1F));
+
+	/**
+	 * 合金超重型甲材料。
+	 *
+	 * <ul>
+	 *   <li>护甲值：合金重型甲 (6/13/10/6) 各部位 +3/+5/+4/+3 → 9/18/14/9，与钻石超重型同级；</li>
+	 *   <li>韧性：合金重型甲 5.0 + 2.0 = 7.0；</li>
+	 *   <li>击退抗性：合金重型甲 0.1 + 0.1 = 0.2；</li>
+	 *   <li>与合金重型甲一样带抗火。</li>
+	 * </ul>
+	 */
+	public static final DeferredHolder<ArmorMaterial, ArmorMaterial> ALLOY_ULTRA_HEAVY = ARMOR_MATERIALS.register(
+			"alloy_ultra_heavy",
+			() -> new ArmorMaterial(
+					Map.of(
+							ArmorItem.Type.HELMET, 9,
+							ArmorItem.Type.CHESTPLATE, 18,
+							ArmorItem.Type.LEGGINGS, 14,
+							ArmorItem.Type.BOOTS, 9),
+					15,
+					SoundEvents.ARMOR_EQUIP_NETHERITE,
+					() -> Ingredient.of(Items.NETHERITE_INGOT),
+					List.of(new ArmorMaterial.Layer(
+							ResourceLocation.fromNamespaceAndPath(ArmorAddon.MOD_ID, "alloy_ultra_heavy"), "", false)),
+					7.0F,
+					0.2F));
+
 	private ModArmorMaterials() {
 	}
 

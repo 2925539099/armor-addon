@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": {
+    "item": "armor_addon:armor_upgrade_template"
+  },
+  "base": {
+    "item": "armor_addon:diamond_ultra_heavy_chestplate"
+  },
+  "addition": {
+    "item": "minecraft:netherite_block"
+  },
+  "result": {
+    "count": 1,
+    "id": "armor_addon:alloy_ultra_heavy_chestplate"
+  }
+}

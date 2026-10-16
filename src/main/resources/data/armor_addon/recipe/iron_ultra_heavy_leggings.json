@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "B": {
+      "item": "minecraft:iron_block"
+    },
+    "W": {
+      "tag": "minecraft:wool"
+    },
+    "A": {
+      "item": "armor_addon:iron_heavy_leggings"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "pattern": [
+    "BWB",
+    "WAW",
+    "IWI"
+  ],
+  "result": {
+    "count": 1,
+    "id": "armor_addon:iron_ultra_heavy_leggings"
+  }
+}

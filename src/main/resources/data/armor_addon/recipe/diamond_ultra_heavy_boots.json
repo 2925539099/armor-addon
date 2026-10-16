@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "B": {
+      "item": "minecraft:diamond_block"
+    },
+    "W": {
+      "tag": "minecraft:wool"
+    },
+    "A": {
+      "item": "armor_addon:diamond_heavy_boots"
+    },
+    "I": {
+      "item": "minecraft:diamond"
+    }
+  },
+  "pattern": [
+    "BWB",
+    "WAW",
+    "IWI"
+  ],
+  "result": {
+    "count": 1,
+    "id": "armor_addon:diamond_ultra_heavy_boots"
+  }
+}

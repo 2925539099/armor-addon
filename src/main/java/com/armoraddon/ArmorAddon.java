@@ -20,11 +20,16 @@ import org.slf4j.LoggerFactory;
 /**
  * 盔甲附加（Armor Addon）—— NeoForge 版主入口。
  *
- * <p>注册十个盔甲材料（木制盔甲、羊毛盔甲、四种内衬甲、四种重型甲）
- * 与对应的四十个盔甲部件，另加一件盔甲升级模板，并把它们加入创造模式「战斗」物品栏。</p>
+ * <p>注册十四个盔甲材料（木制、羊毛、四种内衬甲、四种重型甲、四种超重型甲）
+ * 与对应的五十六个盔甲部件，另加一件盔甲升级模板，并把它们加入创造模式「战斗」物品栏。</p>
  *
- * <p>机制：羊毛靴子让移动不产生振动；羊毛 / 内衬 / 重型共九套盔甲具备音波抗性
- * （受到音波类伤害时每穿一件减 1 点）。</p>
+ * <p>机制：</p>
+ * <ul>
+ *   <li>羊毛靴子让移动不产生振动；</li>
+ *   <li>羊毛 / 内衬 / 重型共九套具备音波抗性，每件减 1 点；超重型甲再升一级，每件减 2 点；</li>
+ *   <li>金制与合金制的重型甲、超重型甲让猪灵保持中立；</li>
+ *   <li>内衬甲与超重型甲在合成时继承基底的附魔、名称与已损失的耐久。</li>
+ * </ul>
  */
 @Mod(ArmorAddon.MOD_ID)
 public final class ArmorAddon {
@@ -37,15 +42,15 @@ public final class ArmorAddon {
 		ModItems.register(modEventBus);
 
 		modEventBus.addListener(this::addCreativeTabItems);
-		// 铁制内衬甲合成时继承铁盔甲附魔 / 名称并同步损耗耐久。
+		// 内衬甲与超重型甲合成时继承基底的附魔 / 名称并同步损耗耐久。
 		NeoForge.EVENT_BUS.addListener(ModCraftingEvents::onItemCrafted);
 		// 羊毛靴子：移动时不被幽匿感测体 / 坚守者探测到。
 		NeoForge.EVENT_BUS.addListener(WoolBootsEvents::onVanillaGameEvent);
-		// 羊毛盔甲 / 内衬甲 / 重型甲：受到音波类伤害时每件减 1 点。
+		// 音波抗性：羊毛系九套每件减 1 点，超重型甲每件减 2 点。
 		NeoForge.EVENT_BUS.addListener(SonicResistEvents::onIncomingDamage);
 
-		LOGGER.info("[盔甲附加] NeoForge 版模组已加载，木制 / 羊毛盔甲、铁制 / 金制 / 钻石 / 合金内衬甲"
-				+ "与四套重型甲已注册；羊毛 / 内衬 / 重型共九套具备音波抗性（每件减 1 点）。");
+		LOGGER.info("[盔甲附加] NeoForge 版模组已加载，木制 / 羊毛盔甲、四种内衬甲、"
+				+ "四种重型甲与四种超重型甲已注册；猪灵中立与音波抗性已生效。");
 	}
 
 	private void addCreativeTabItems(BuildCreativeModeTabContentsEvent event) {
@@ -103,6 +108,27 @@ public final class ArmorAddon {
 			event.accept(ModItems.ALLOY_HEAVY_CHESTPLATE);
 			event.accept(ModItems.ALLOY_HEAVY_LEGGINGS);
 			event.accept(ModItems.ALLOY_HEAVY_BOOTS);
+
+			// ---- 超重型甲（由对应重型甲升级而来）----
+			event.accept(ModItems.GOLD_ULTRA_HEAVY_HELMET);
+			event.accept(ModItems.GOLD_ULTRA_HEAVY_CHESTPLATE);
+			event.accept(ModItems.GOLD_ULTRA_HEAVY_LEGGINGS);
+			event.accept(ModItems.GOLD_ULTRA_HEAVY_BOOTS);
+
+			event.accept(ModItems.IRON_ULTRA_HEAVY_HELMET);
+			event.accept(ModItems.IRON_ULTRA_HEAVY_CHESTPLATE);
+			event.accept(ModItems.IRON_ULTRA_HEAVY_LEGGINGS);
+			event.accept(ModItems.IRON_ULTRA_HEAVY_BOOTS);
+
+			event.accept(ModItems.DIAMOND_ULTRA_HEAVY_HELMET);
+			event.accept(ModItems.DIAMOND_ULTRA_HEAVY_CHESTPLATE);
+			event.accept(ModItems.DIAMOND_ULTRA_HEAVY_LEGGINGS);
+			event.accept(ModItems.DIAMOND_ULTRA_HEAVY_BOOTS);
+
+			event.accept(ModItems.ALLOY_ULTRA_HEAVY_HELMET);
+			event.accept(ModItems.ALLOY_ULTRA_HEAVY_CHESTPLATE);
+			event.accept(ModItems.ALLOY_ULTRA_HEAVY_LEGGINGS);
+			event.accept(ModItems.ALLOY_ULTRA_HEAVY_BOOTS);
 		}
 	}
 }

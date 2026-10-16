@@ -39,5 +39,21 @@
   "item.armor_addon.alloy_heavy_helmet": "合金重型头盔",
   "item.armor_addon.alloy_heavy_chestplate": "合金重型胸甲",
   "item.armor_addon.alloy_heavy_leggings": "合金重型护腿",
-  "item.armor_addon.alloy_heavy_boots": "合金重型靴子"
+  "item.armor_addon.alloy_heavy_boots": "合金重型靴子",
+  "item.armor_addon.gold_ultra_heavy_helmet": "金制超重型头盔",
+  "item.armor_addon.gold_ultra_heavy_chestplate": "金制超重型胸甲",
+  "item.armor_addon.gold_ultra_heavy_leggings": "金制超重型护腿",
+  "item.armor_addon.gold_ultra_heavy_boots": "金制超重型靴子",
+  "item.armor_addon.iron_ultra_heavy_helmet": "铁制超重型头盔",
+  "item.armor_addon.iron_ultra_heavy_chestplate": "铁制超重型胸甲",
+  "item.armor_addon.iron_ultra_heavy_leggings": "铁制超重型护腿",
+  "item.armor_addon.iron_ultra_heavy_boots": "铁制超重型靴子",
+  "item.armor_addon.diamond_ultra_heavy_helmet": "钻石超重型头盔",
+  "item.armor_addon.diamond_ultra_heavy_chestplate": "钻石超重型胸甲",
+  "item.armor_addon.diamond_ultra_heavy_leggings": "钻石超重型护腿",
+  "item.armor_addon.diamond_ultra_heavy_boots": "钻石超重型靴子",
+  "item.armor_addon.alloy_ultra_heavy_helmet": "合金超重型头盔",
+  "item.armor_addon.alloy_ultra_heavy_chestplate": "合金超重型胸甲",
+  "item.armor_addon.alloy_ultra_heavy_leggings": "合金超重型护腿",
+  "item.armor_addon.alloy_ultra_heavy_boots": "合金超重型靴子"
 }

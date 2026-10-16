@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "B": {
+      "item": "minecraft:netherite_block"
+    },
+    "W": {
+      "tag": "minecraft:wool"
+    },
+    "A": {
+      "item": "armor_addon:alloy_heavy_chestplate"
+    },
+    "I": {
+      "item": "minecraft:netherite_ingot"
+    }
+  },
+  "pattern": [
+    "BWB",
+    "WAW",
+    "IWI"
+  ],
+  "result": {
+    "count": 1,
+    "id": "armor_addon:alloy_ultra_heavy_chestplate"
+  }
+}

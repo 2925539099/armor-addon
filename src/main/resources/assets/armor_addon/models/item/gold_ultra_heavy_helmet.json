@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "armor_addon:item/gold_ultra_heavy_helmet"
+  }
+}

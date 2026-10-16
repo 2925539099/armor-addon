@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "B": {
+      "item": "minecraft:gold_block"
+    },
+    "W": {
+      "tag": "minecraft:wool"
+    },
+    "A": {
+      "item": "armor_addon:gold_heavy_boots"
+    },
+    "I": {
+      "item": "minecraft:gold_ingot"
+    }
+  },
+  "pattern": [
+    "BWB",
+    "WAW",
+    "IWI"
+  ],
+  "result": {
+    "count": 1,
+    "id": "armor_addon:gold_ultra_heavy_boots"
+  }
+}
