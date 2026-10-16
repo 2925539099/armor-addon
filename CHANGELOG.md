@@ -5,6 +5,36 @@
 格式依据 [Keep a Changelog](https://keepachangelog.com/zh-CN/1.1.0/)，
 版本号遵循语义化版本 `主.次.修正`。
 
+## [1.3.3]
+
+### 变更
+
+- **重量惩罚改为写在物品的默认属性修饰符里。** 1.3.2 是用 `PlayerTickEvent`
+  每 tick 手动追加修饰符实现的 —— 效果对，但**玩家在物品栏里看不到任何说明**。
+
+  现在改成重写 `ArmorItem#getDefaultAttributeModifiers`，在它原本返回的
+  护甲值 / 韧性 / 击退抗性之上追加一个移动速度修饰符：
+
+  ```java
+  return base.withModifierAdded(
+          Attributes.MOVEMENT_SPEED,
+          new AttributeModifier(WEIGHT_ID, -slow,
+                  AttributeModifier.Operation.ADD_MULTIPLIED_BASE),
+          EquipmentSlotGroup.bySlot(getType().getSlot()));
+  ```
+
+  穿脱时由游戏自动施加与移除，物品提示会像药水那样显示
+  「当穿戴时：-7.5% 移动速度」。减速幅度与 1.3.2 完全一致
+  （金 7.5% / 铁 5% / 钻石 2.5% / 合金 10%，每件累加）。
+
+  配套改动：
+
+  | | 内容 |
+  | --- | --- |
+  | 新增 | `UltraHeavyArmorItem`（铁制 / 钻石制）、`PiglinNeutralUltraHeavyArmorItem`（金制 / 合金制，多带猪灵中立） |
+  | 删除 | `UltraHeavySlowEvents`（旧的每 tick 事件）及其在主类里的注册 |
+  | 改动 | 16 件超重型甲换用新类 |
+
 ## [1.3.2]
 
 ### 新增
@@ -30,7 +60,7 @@
   | 钻石 | (33, 0) | (48, 6) | (43, 22) | (43, 22) |
   | 合金 | (33, 0) | **(48, 0)** | (43, 22) | (43, 22) |
 
-- **超重型甲的重量惩罚。** 按材质每件降低移动速度：
+- **超重型甲的重量惩罚。** 按材质每件降低移动速度。
 
   | 套装 | 每件 | 穿满四件 |
   | --- | --- | --- |
@@ -367,6 +397,7 @@
 - 装备外观由 `textures/models/armor/<材质名>_layer_1.png` / `_layer_2.png` 提供。
 - 内衬甲系列为单一固定材质，**不支持染色**。
 
+[1.3.3]: https://github.com/2925539099/armor-addon/compare/1.3.2...1.3.3
 [1.3.2]: https://github.com/2925539099/armor-addon/compare/1.3.1...1.3.2
 [1.3.1]: https://github.com/2925539099/armor-addon/compare/1.3.0...1.3.1
 [1.3.0]: https://github.com/2925539099/armor-addon/compare/1.2.5...1.3.0

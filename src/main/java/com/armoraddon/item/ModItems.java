@@ -219,61 +219,61 @@ public final class ModItems {
 	// ---- 金制超重型甲（金制重型 138/201/189/163 ×1.1）----
 	// 151 / 221 / 207 / 179
 	public static final DeferredItem<Item> GOLD_ULTRA_HEAVY_HELMET =
-			registerPiglinNeutralArmor("gold_ultra_heavy_helmet", ModArmorMaterials.GOLD_ULTRA_HEAVY,
+			registerPiglinNeutralUltraHeavyArmor("gold_ultra_heavy_helmet", ModArmorMaterials.GOLD_ULTRA_HEAVY,
 					ArmorItem.Type.HELMET, 151);
 	public static final DeferredItem<Item> GOLD_ULTRA_HEAVY_CHESTPLATE =
-			registerPiglinNeutralArmor("gold_ultra_heavy_chestplate", ModArmorMaterials.GOLD_ULTRA_HEAVY,
+			registerPiglinNeutralUltraHeavyArmor("gold_ultra_heavy_chestplate", ModArmorMaterials.GOLD_ULTRA_HEAVY,
 					ArmorItem.Type.CHESTPLATE, 221);
 	public static final DeferredItem<Item> GOLD_ULTRA_HEAVY_LEGGINGS =
-			registerPiglinNeutralArmor("gold_ultra_heavy_leggings", ModArmorMaterials.GOLD_ULTRA_HEAVY,
+			registerPiglinNeutralUltraHeavyArmor("gold_ultra_heavy_leggings", ModArmorMaterials.GOLD_ULTRA_HEAVY,
 					ArmorItem.Type.LEGGINGS, 207);
 	public static final DeferredItem<Item> GOLD_ULTRA_HEAVY_BOOTS =
-			registerPiglinNeutralArmor("gold_ultra_heavy_boots", ModArmorMaterials.GOLD_ULTRA_HEAVY,
+			registerPiglinNeutralUltraHeavyArmor("gold_ultra_heavy_boots", ModArmorMaterials.GOLD_ULTRA_HEAVY,
 					ArmorItem.Type.BOOTS, 179);
 
 	// ---- 铁制超重型甲（铁制重型 297/432/405/351 ×1.1）----
 	// 326 / 475 / 445 / 386
 	public static final DeferredItem<Item> IRON_ULTRA_HEAVY_HELMET =
-			registerArmorWithDurability("iron_ultra_heavy_helmet", ModArmorMaterials.IRON_ULTRA_HEAVY,
+			registerUltraHeavyArmor("iron_ultra_heavy_helmet", ModArmorMaterials.IRON_ULTRA_HEAVY,
 					ArmorItem.Type.HELMET, 326);
 	public static final DeferredItem<Item> IRON_ULTRA_HEAVY_CHESTPLATE =
-			registerArmorWithDurability("iron_ultra_heavy_chestplate", ModArmorMaterials.IRON_ULTRA_HEAVY,
+			registerUltraHeavyArmor("iron_ultra_heavy_chestplate", ModArmorMaterials.IRON_ULTRA_HEAVY,
 					ArmorItem.Type.CHESTPLATE, 475);
 	public static final DeferredItem<Item> IRON_ULTRA_HEAVY_LEGGINGS =
-			registerArmorWithDurability("iron_ultra_heavy_leggings", ModArmorMaterials.IRON_ULTRA_HEAVY,
+			registerUltraHeavyArmor("iron_ultra_heavy_leggings", ModArmorMaterials.IRON_ULTRA_HEAVY,
 					ArmorItem.Type.LEGGINGS, 445);
 	public static final DeferredItem<Item> IRON_ULTRA_HEAVY_BOOTS =
-			registerArmorWithDurability("iron_ultra_heavy_boots", ModArmorMaterials.IRON_ULTRA_HEAVY,
+			registerUltraHeavyArmor("iron_ultra_heavy_boots", ModArmorMaterials.IRON_ULTRA_HEAVY,
 					ArmorItem.Type.BOOTS, 386);
 
 	// ---- 钻石超重型甲（钻石重型 652/949/891/771 ×1.1）----
 	// 717 / 1043 / 980 / 848
 	public static final DeferredItem<Item> DIAMOND_ULTRA_HEAVY_HELMET =
-			registerArmorWithDurability("diamond_ultra_heavy_helmet", ModArmorMaterials.DIAMOND_ULTRA_HEAVY,
+			registerUltraHeavyArmor("diamond_ultra_heavy_helmet", ModArmorMaterials.DIAMOND_ULTRA_HEAVY,
 					ArmorItem.Type.HELMET, 717);
 	public static final DeferredItem<Item> DIAMOND_ULTRA_HEAVY_CHESTPLATE =
-			registerArmorWithDurability("diamond_ultra_heavy_chestplate", ModArmorMaterials.DIAMOND_ULTRA_HEAVY,
+			registerUltraHeavyArmor("diamond_ultra_heavy_chestplate", ModArmorMaterials.DIAMOND_ULTRA_HEAVY,
 					ArmorItem.Type.CHESTPLATE, 1043);
 	public static final DeferredItem<Item> DIAMOND_ULTRA_HEAVY_LEGGINGS =
-			registerArmorWithDurability("diamond_ultra_heavy_leggings", ModArmorMaterials.DIAMOND_ULTRA_HEAVY,
+			registerUltraHeavyArmor("diamond_ultra_heavy_leggings", ModArmorMaterials.DIAMOND_ULTRA_HEAVY,
 					ArmorItem.Type.LEGGINGS, 980);
 	public static final DeferredItem<Item> DIAMOND_ULTRA_HEAVY_BOOTS =
-			registerArmorWithDurability("diamond_ultra_heavy_boots", ModArmorMaterials.DIAMOND_ULTRA_HEAVY,
+			registerUltraHeavyArmor("diamond_ultra_heavy_boots", ModArmorMaterials.DIAMOND_ULTRA_HEAVY,
 					ArmorItem.Type.BOOTS, 848);
 
 	// ---- 合金超重型甲（合金重型 732/1065/999/865 ×1.1）----
 	// 805 / 1171 / 1098 / 951，猪灵中立 + 抗火
 	public static final DeferredItem<Item> ALLOY_ULTRA_HEAVY_HELMET =
-			registerPiglinNeutralFireResistantArmor("alloy_ultra_heavy_helmet", ModArmorMaterials.ALLOY_ULTRA_HEAVY,
+			registerPiglinNeutralFireResistantUltraHeavyArmor("alloy_ultra_heavy_helmet", ModArmorMaterials.ALLOY_ULTRA_HEAVY,
 					ArmorItem.Type.HELMET, 805);
 	public static final DeferredItem<Item> ALLOY_ULTRA_HEAVY_CHESTPLATE =
-			registerPiglinNeutralFireResistantArmor("alloy_ultra_heavy_chestplate", ModArmorMaterials.ALLOY_ULTRA_HEAVY,
+			registerPiglinNeutralFireResistantUltraHeavyArmor("alloy_ultra_heavy_chestplate", ModArmorMaterials.ALLOY_ULTRA_HEAVY,
 					ArmorItem.Type.CHESTPLATE, 1171);
 	public static final DeferredItem<Item> ALLOY_ULTRA_HEAVY_LEGGINGS =
-			registerPiglinNeutralFireResistantArmor("alloy_ultra_heavy_leggings", ModArmorMaterials.ALLOY_ULTRA_HEAVY,
+			registerPiglinNeutralFireResistantUltraHeavyArmor("alloy_ultra_heavy_leggings", ModArmorMaterials.ALLOY_ULTRA_HEAVY,
 					ArmorItem.Type.LEGGINGS, 1098);
 	public static final DeferredItem<Item> ALLOY_ULTRA_HEAVY_BOOTS =
-			registerPiglinNeutralFireResistantArmor("alloy_ultra_heavy_boots", ModArmorMaterials.ALLOY_ULTRA_HEAVY,
+			registerPiglinNeutralFireResistantUltraHeavyArmor("alloy_ultra_heavy_boots", ModArmorMaterials.ALLOY_ULTRA_HEAVY,
 					ArmorItem.Type.BOOTS, 951);
 
 	private ModItems() {
@@ -328,6 +328,39 @@ public final class ModItems {
 	private static DeferredItem<Item> registerPiglinNeutralFireResistantArmor(String name, Holder<ArmorMaterial> material,
 																			   ArmorItem.Type type, int durability) {
 		return ITEMS.register(name, () -> new PiglinNeutralArmorItem(
+				material,
+				type,
+				new Item.Properties().fireResistant().durability(durability)));
+	}
+
+	/**
+	 * 带重量惩罚的超重型甲（铁制 / 钻石制）。
+	 *
+	 * <p>减速写进了物品的默认属性修饰符，所以物品提示里会像药水那样列出
+	 * 「当穿戴时：−5% 移动速度」。详见 {@link UltraHeavyArmorItem}。</p>
+	 */
+	private static DeferredItem<Item> registerUltraHeavyArmor(String name, Holder<ArmorMaterial> material,
+															  ArmorItem.Type type, int durability) {
+		return ITEMS.register(name, () -> new UltraHeavyArmorItem(
+				material,
+				type,
+				new Item.Properties().durability(durability)));
+	}
+
+	/** 带重量惩罚 + 猪灵中立的超重型甲（金制）。 */
+	private static DeferredItem<Item> registerPiglinNeutralUltraHeavyArmor(String name,
+																		   Holder<ArmorMaterial> material,
+																		   ArmorItem.Type type, int durability) {
+		return ITEMS.register(name, () -> new PiglinNeutralUltraHeavyArmorItem(
+				material,
+				type,
+				new Item.Properties().durability(durability)));
+	}
+
+	/** 带重量惩罚 + 猪灵中立 + 抗火的超重型甲（合金）。 */
+	private static DeferredItem<Item> registerPiglinNeutralFireResistantUltraHeavyArmor(
+			String name, Holder<ArmorMaterial> material, ArmorItem.Type type, int durability) {
+		return ITEMS.register(name, () -> new PiglinNeutralUltraHeavyArmorItem(
 				material,
 				type,
 				new Item.Properties().fireResistant().durability(durability)));

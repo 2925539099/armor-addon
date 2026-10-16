@@ -4,7 +4,6 @@ import com.armoraddon.item.ModArmorMaterials;
 import com.armoraddon.item.ModCraftingEvents;
 import com.armoraddon.item.ModItems;
 import com.armoraddon.item.SonicResistEvents;
-import com.armoraddon.item.UltraHeavySlowEvents;
 import com.armoraddon.item.WoolBootsEvents;
 
 import net.minecraft.world.item.CreativeModeTabs;
@@ -50,8 +49,8 @@ public final class ArmorAddon {
 		NeoForge.EVENT_BUS.addListener(WoolBootsEvents::onVanillaGameEvent);
 		// 音波抗性：羊毛系九套每件减 1 点，超重型甲每件减 2 点。
 		NeoForge.EVENT_BUS.addListener(SonicResistEvents::onIncomingDamage);
-		// 超重型甲的重量惩罚：按材质每件降低移动速度。
-		NeoForge.EVENT_BUS.addListener(UltraHeavySlowEvents::onPlayerTick);
+		// 超重型甲的重量惩罚没有事件 —— 它写在物品的默认属性修饰符里，
+		// 由 Minecraft 在穿脱时自动施加，见 UltraHeavyArmorItem。
 
 		LOGGER.info("[盔甲附加] NeoForge 版模组已加载，木制 / 羊毛盔甲、四种内衬甲、"
 				+ "四种重型甲与四种超重型甲已注册；猪灵中立、音波抗性与超重型甲减速已生效。");
