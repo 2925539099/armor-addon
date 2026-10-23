@@ -5,17 +5,25 @@ Minecraft **1.21.1** / **NeoForge** 模组，新增十四套共 56 件可合成�
 
 ## 下载
 
-各版本的成品 jar 都在 [`releases/`](releases/) 目录，点文件名即可直接下载：
+各版本通过 **[GitHub Releases](https://github.com/2925539099/armor-addon/releases)** 发布，
+点版本号即可跳到对应页面下载：
 
 | 版本 | 大小 | 内容 |
 | --- | --- | --- |
-| **1.3.0**（最新） | 138.8 KB | 十四套 56 件 + 1 件锻造模板，新增四套超重型甲 |
-| 1.2.0 | 94.4 KB | 十套 40 件 + 1 件锻造模板，含四套重型甲 |
-| 1.1.0 | 58.7 KB | 六套 24 件，含木制盔甲 |
-| 1.0.1 | 51.8 KB | 五套 20 件 |
-| 1.0.0 | 51.5 KB | 五套 20 件，首个版本 |
+| **[1.3.4](https://github.com/2925539099/armor-addon/releases/tag/v1.3.4)**（最新） | 147.8 KB | 移除合金超重型甲的锻造台捷径，只保留工作台路线 |
+| [1.3.3](https://github.com/2925539099/armor-addon/releases/tag/v1.3.3) | 149.2 KB | 重量惩罚改为写在物品属性上，悬停可见 |
+| [1.3.2](https://github.com/2925539099/armor-addon/releases/tag/v1.3.2) | 148.5 KB | 超重型甲自定义模型（肩甲 / 护膝）+ 重量惩罚 |
+| [1.3.1](https://github.com/2925539099/armor-addon/releases/tag/v1.3.1) | 139.1 KB | 锻造台配方也会继承基底数据 |
+| [1.3.0](https://github.com/2925539099/armor-addon/releases/tag/v1.3.0) | 138.8 KB | 十四套 56 件 + 1 件锻造模板，新增四套超重型甲 |
+| [1.2.0](https://github.com/2925539099/armor-addon/releases/tag/v1.2.0) | 94.4 KB | 十套 40 件 + 1 件锻造模板，含四套重型甲 |
+| [1.1.0](https://github.com/2925539099/armor-addon/releases/tag/v1.1.0) | 58.7 KB | 六套 24 件，含木制盔甲 |
+| [1.0.1](https://github.com/2925539099/armor-addon/releases/tag/v1.0.1) | 51.8 KB | 五套 20 件 |
+| [1.0.0](https://github.com/2925539099/armor-addon/releases/tag/v1.0.0) | 51.5 KB | 五套 20 件，首个版本 |
 
-详见 [releases/README.md](releases/README.md) 与 [CHANGELOG.md](CHANGELOG.md)。
+完整的版本清单与全量 SHA256 见 [docs/releases/README.md](docs/releases/README.md)，
+改动详情见 [CHANGELOG.md](CHANGELOG.md)。
+
+> 仓库本身不存放 jar —— 构建产物不进版本控制，成品一律走 Releases。
 
 ## 内容
 
@@ -385,8 +393,8 @@ Minecraft **1.21.1** / **NeoForge** 模组，新增十四套共 56 件可合成�
 ## 安装
 
 1. 安装 Minecraft 1.21.1 的 **NeoForge**（21.1.244 或更高的 21.1.x）。
-2. 从本仓库的 [`releases/`](releases/) 目录下载 jar（也可自行构建，见下节），
-   放入 `.minecraft/mods/`。当前最新版本为 `盔甲附加-1.3.0.jar`。
+2. 从 [Releases](https://github.com/2925539099/armor-addon/releases) 下载 jar
+   （也可自行构建，见下节），放入 `.minecraft/mods/`。当前最新版本为 `盔甲附加-1.3.4.jar`。
 
 **不需要**额外的前置模组。
 

@@ -1,7 +1,6 @@
 # Gradle
 .gradle/
 build/
-!gradle/wrapper/gradle-wrapper.jar
 
 # IDE
 .idea/
@@ -22,3 +21,9 @@ Thumbs.db
 # Python 编译缓存
 __pycache__/
 *.py[cod]
+
+# 构建产物 —— 成品通过 GitHub Releases 发布，不进版本控制
+*.jar
+# gradle wrapper 是构建必需的，必须提交。
+# 排除规则要放在忽略规则之后才生效。
+!gradle/wrapper/gradle-wrapper.jar

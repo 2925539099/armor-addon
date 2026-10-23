@@ -418,17 +418,17 @@
 - 装备外观由 `textures/models/armor/<材质名>_layer_1.png` / `_layer_2.png` 提供。
 - 内衬甲系列为单一固定材质，**不支持染色**。
 
-[1.3.4]: https://github.com/2925539099/armor-addon/compare/1.3.3...1.3.4
-[1.3.3]: https://github.com/2925539099/armor-addon/compare/1.3.2...1.3.3
-[1.3.2]: https://github.com/2925539099/armor-addon/compare/1.3.1...1.3.2
-[1.3.1]: https://github.com/2925539099/armor-addon/compare/1.3.0...1.3.1
-[1.3.0]: https://github.com/2925539099/armor-addon/compare/1.2.5...1.3.0
-[1.2.5]: https://github.com/2925539099/armor-addon/compare/1.2.4...1.2.5
-[1.2.4]: https://github.com/2925539099/armor-addon/compare/1.2.3...1.2.4
-[1.2.3]: https://github.com/2925539099/armor-addon/compare/1.2.2...1.2.3
-[1.2.2]: https://github.com/2925539099/armor-addon/compare/1.2.1...1.2.2
-[1.2.1]: https://github.com/2925539099/armor-addon/compare/1.2.0...1.2.1
-[1.2.0]: https://github.com/2925539099/armor-addon/compare/1.1.0...1.2.0
-[1.1.0]: https://github.com/2925539099/armor-addon/compare/1.0.1...1.1.0
-[1.0.1]: https://github.com/2925539099/armor-addon/compare/1.0.0...1.0.1
-[1.0.0]: https://github.com/2925539099/armor-addon/releases/tag/1.0.0
+[1.3.4]: https://github.com/2925539099/armor-addon/compare/v1.3.3...v1.3.4
+[1.3.3]: https://github.com/2925539099/armor-addon/compare/v1.3.2...v1.3.3
+[1.3.2]: https://github.com/2925539099/armor-addon/compare/v1.3.1...v1.3.2
+[1.3.1]: https://github.com/2925539099/armor-addon/compare/v1.3.0...v1.3.1
+[1.3.0]: https://github.com/2925539099/armor-addon/compare/v1.2.5...v1.3.0
+[1.2.5]: https://github.com/2925539099/armor-addon/compare/v1.2.4...v1.2.5
+[1.2.4]: https://github.com/2925539099/armor-addon/compare/v1.2.3...v1.2.4
+[1.2.3]: https://github.com/2925539099/armor-addon/compare/v1.2.2...v1.2.3
+[1.2.2]: https://github.com/2925539099/armor-addon/compare/v1.2.1...v1.2.2
+[1.2.1]: https://github.com/2925539099/armor-addon/compare/v1.2.0...v1.2.1
+[1.2.0]: https://github.com/2925539099/armor-addon/compare/v1.1.0...v1.2.0
+[1.1.0]: https://github.com/2925539099/armor-addon/compare/v1.0.1...v1.1.0
+[1.0.1]: https://github.com/2925539099/armor-addon/compare/v1.0.0...v1.0.1
+[1.0.0]: https://github.com/2925539099/armor-addon/releases/tag/v1.0.0
