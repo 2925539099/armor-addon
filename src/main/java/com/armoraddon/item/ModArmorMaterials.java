@@ -462,6 +462,98 @@ public final class ModArmorMaterials {
 	private ModArmorMaterials() {
 	}
 
+	// ============================================================
+	//  锁链系列（第三次更新）
+	//
+	//  定位：用「一叠锁链」衍生出的廉价材料做的透气盔甲。
+	//  与同档实心盔甲相比：
+	//    护甲值更低，但档位越高差值越大（-1 / -1 / -2 / -3）；
+	//    附魔亲和度更高（+3 ~ +10），补偿防护上的劣势。
+	//  耐久与韧性沿用同档实心盔甲，不额外削弱。
+	//
+	//  贴图：锁链本体直接借用原版 chainmail 的贴图，其余三套各有自己的
+	//  <材质>_chain_layer_1/2.png。
+	// ============================================================
+
+	/**
+	 * 金锁链盔甲材料。
+	 *
+	 * <ul>
+	 *   <li>护甲值 2/4/3/1（合计 10），比金甲 2/5/3/1（合计 11）低 1；</li>
+	 *   <li>附魔亲和度 30，比金甲 25 高 5 —— 已到附魔台的上限区间；</li>
+	 *   <li>韧性 0.0、击退抗性 0.0。</li>
+	 * </ul>
+	 */
+	public static final DeferredHolder<ArmorMaterial, ArmorMaterial> GOLD_CHAIN = ARMOR_MATERIALS.register(
+			"gold_chain",
+			() -> new ArmorMaterial(
+					Map.of(
+							ArmorItem.Type.HELMET, 2,
+							ArmorItem.Type.CHESTPLATE, 4,
+							ArmorItem.Type.LEGGINGS, 3,
+							ArmorItem.Type.BOOTS, 1),
+					30,
+					SoundEvents.ARMOR_EQUIP_GOLD,
+					() -> Ingredient.of(Items.GOLD_INGOT),
+					List.of(new ArmorMaterial.Layer(
+							ResourceLocation.fromNamespaceAndPath(ArmorAddon.MOD_ID, "gold_chain"), "", false)),
+					0.0F,
+					0.0F));
+
+	/**
+	 * 钻石锁链盔甲材料。
+	 *
+	 * <ul>
+	 *   <li>护甲值 3/7/5/3（合计 18），比钻石甲 3/8/6/3（合计 20）低 2；</li>
+	 *   <li>附魔亲和度 15，比钻石甲 10 高 5；</li>
+	 *   <li>韧性 2.0、击退抗性 0.0，与钻石甲一致。</li>
+	 * </ul>
+	 */
+	public static final DeferredHolder<ArmorMaterial, ArmorMaterial> DIAMOND_CHAIN = ARMOR_MATERIALS.register(
+			"diamond_chain",
+			() -> new ArmorMaterial(
+					Map.of(
+							ArmorItem.Type.HELMET, 3,
+							ArmorItem.Type.CHESTPLATE, 7,
+							ArmorItem.Type.LEGGINGS, 5,
+							ArmorItem.Type.BOOTS, 3),
+					15,
+					SoundEvents.ARMOR_EQUIP_DIAMOND,
+					() -> Ingredient.of(Items.DIAMOND),
+					List.of(new ArmorMaterial.Layer(
+							ResourceLocation.fromNamespaceAndPath(ArmorAddon.MOD_ID, "diamond_chain"), "", false)),
+					2.0F,
+					0.0F));
+
+	/**
+	 * 合金锁链盔甲材料。
+	 *
+	 * <p><strong>护甲值与钻石锁链完全相同</strong> —— 因为模组里合金甲与钻石甲的
+	 * 护甲值本来就一样（内衬甲都是 4/9/7/4），两者的差别在韧性、击退抗性和
+	 * 附魔亲和度上。锁链版延续这个关系，不额外再削一档。</p>
+	 *
+	 * <ul>
+	 *   <li>护甲值 3/7/5/3（合计 18），与钻石锁链相同，比合金甲 3/8/6/3（合计 20）低 2；</li>
+	 *   <li>附魔亲和度 25，比合金甲 15 高 10；</li>
+	 *   <li>韧性 3.0、击退抗性 0.1，与合金甲一致 —— 这才是合金相对钻石的优势所在。</li>
+	 * </ul>
+	 */
+	public static final DeferredHolder<ArmorMaterial, ArmorMaterial> ALLOY_CHAIN = ARMOR_MATERIALS.register(
+			"alloy_chain",
+			() -> new ArmorMaterial(
+					Map.of(
+							ArmorItem.Type.HELMET, 3,
+							ArmorItem.Type.CHESTPLATE, 7,
+							ArmorItem.Type.LEGGINGS, 5,
+							ArmorItem.Type.BOOTS, 3),
+					25,
+					SoundEvents.ARMOR_EQUIP_NETHERITE,
+					() -> Ingredient.of(Items.NETHERITE_INGOT),
+					List.of(new ArmorMaterial.Layer(
+							ResourceLocation.fromNamespaceAndPath(ArmorAddon.MOD_ID, "alloy_chain"), "", false)),
+					3.0F,
+					0.1F));
+
 	public static void register(IEventBus modEventBus) {
 		ARMOR_MATERIALS.register(modEventBus);
 	}

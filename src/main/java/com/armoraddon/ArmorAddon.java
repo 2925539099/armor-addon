@@ -132,6 +132,34 @@ public final class ArmorAddon {
 			event.accept(ModItems.ALLOY_ULTRA_HEAVY_CHESTPLATE);
 			event.accept(ModItems.ALLOY_ULTRA_HEAVY_LEGGINGS);
 			event.accept(ModItems.ALLOY_ULTRA_HEAVY_BOOTS);
+
+			// ---- 锁链系列（第三次更新）----
+			// 材料与液体先放，它们是整套装备的起点。
+			event.accept(ModItems.EXCHANGE_FLUID);
+			event.accept(ModItems.NETHERITE_PLATING_FLUID);
+			event.accept(ModItems.STACK_OF_CHAIN);
+			event.accept(ModItems.CHAIN_MATERIAL);
+			event.accept(ModItems.STACK_OF_GOLD_CHAIN);
+			event.accept(ModItems.GOLD_CHAIN_MATERIAL);
+			event.accept(ModItems.DIAMOND_CHAIN_MATERIAL);
+			event.accept(ModItems.STACK_OF_ALLOY_CHAIN);
+			event.accept(ModItems.ALLOY_CHAIN_MATERIAL);
+
+
+			event.accept(ModItems.GOLD_CHAIN_HELMET);
+			event.accept(ModItems.GOLD_CHAIN_CHESTPLATE);
+			event.accept(ModItems.GOLD_CHAIN_LEGGINGS);
+			event.accept(ModItems.GOLD_CHAIN_BOOTS);
+
+			event.accept(ModItems.DIAMOND_CHAIN_HELMET);
+			event.accept(ModItems.DIAMOND_CHAIN_CHESTPLATE);
+			event.accept(ModItems.DIAMOND_CHAIN_LEGGINGS);
+			event.accept(ModItems.DIAMOND_CHAIN_BOOTS);
+
+			event.accept(ModItems.ALLOY_CHAIN_HELMET);
+			event.accept(ModItems.ALLOY_CHAIN_CHESTPLATE);
+			event.accept(ModItems.ALLOY_CHAIN_LEGGINGS);
+			event.accept(ModItems.ALLOY_CHAIN_BOOTS);
 		}
 	}
 }

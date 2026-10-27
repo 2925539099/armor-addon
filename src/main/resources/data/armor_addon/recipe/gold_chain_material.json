@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "armor_addon:stack_of_gold_chain"
+    }
+  ],
+  "result": {
+    "count": 24,
+    "id": "armor_addon:gold_chain_material"
+  }
+}

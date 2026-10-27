@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": {
+    "item": "minecraft:netherite_upgrade_smithing_template"
+  },
+  "base": {
+    "item": "armor_addon:gold_chain_boots"
+  },
+  "addition": {
+    "item": "armor_addon:netherite_plating_fluid"
+  },
+  "result": {
+    "count": 1,
+    "id": "armor_addon:alloy_chain_boots"
+  }
+}

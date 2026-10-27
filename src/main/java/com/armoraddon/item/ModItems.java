@@ -276,6 +276,102 @@ public final class ModItems {
 			registerPiglinNeutralFireResistantUltraHeavyArmor("alloy_ultra_heavy_boots", ModArmorMaterials.ALLOY_ULTRA_HEAVY,
 					ArmorItem.Type.BOOTS, 951);
 
+	// ============================================================
+	//  第三次更新：锁链系列
+	//
+	//  材料链：
+	//    9 个锁链 → 一叠锁链 → 锁链材料 ×24
+	//    一叠锁链 + 置换液 + 金块 + 金锭 ×3 → 一叠金锁链 → 金锁链材料 ×24
+	//    4 个钻石 → 钻石锁链材料 ×8
+	//    锻造台：合金锻造模板 + 一叠金锁链 + 下界合金镀液 → 一叠合金锁链 → 合金锁链材料 ×24
+	//
+	//  盔甲：四种材料各做一套四件，按原版铁盔甲的形状在工作台合成。
+	//        合金锁链四件额外可用下界合金升级锻造模板 + 下界合金镀液从金锁链升级。
+	//
+	//  耐久系数：锁链 / 金锁链 15、钻石锁链 33、合金锁链 37。
+	// ============================================================
+
+	// ---- 锁链系列：材料与液体 ----
+
+	/** 一叠锁链：9 个锁链压实而成，是整条材料链的起点。 */
+	public static final DeferredItem<Item> STACK_OF_CHAIN =
+			ITEMS.register("stack_of_chain", () -> new Item(new Item.Properties()));
+
+	/** 锁链材料：由一叠锁链拆出的 24 份，用于合成锁链盔甲。 */
+	public static final DeferredItem<Item> CHAIN_MATERIAL =
+			ITEMS.register("chain_material", () -> new Item(new Item.Properties()));
+
+	/** 置换液：水瓶 + 青金石 + 纸 + 玻璃板，用于给材料镀金。 */
+	public static final DeferredItem<Item> EXCHANGE_FLUID =
+			ITEMS.register("exchange_fluid", () -> new Item(new Item.Properties()));
+
+	/** 下界合金镀液：置换液 + 下界合金碎片 ×2，用于镀合金。 */
+	public static final DeferredItem<Item> NETHERITE_PLATING_FLUID =
+			ITEMS.register("netherite_plating_fluid", () -> new Item(new Item.Properties()));
+
+	/** 一叠金锁链。 */
+	public static final DeferredItem<Item> STACK_OF_GOLD_CHAIN =
+			ITEMS.register("stack_of_gold_chain", () -> new Item(new Item.Properties()));
+
+	/** 金锁链材料：由一叠金锁链拆出的 24 份。 */
+	public static final DeferredItem<Item> GOLD_CHAIN_MATERIAL =
+			ITEMS.register("gold_chain_material", () -> new Item(new Item.Properties()));
+
+	/** 钻石锁链材料：4 个钻石围着合成，一次出 8 份。 */
+	public static final DeferredItem<Item> DIAMOND_CHAIN_MATERIAL =
+			ITEMS.register("diamond_chain_material", () -> new Item(new Item.Properties()));
+
+	/** 一叠合金锁链。 */
+	public static final DeferredItem<Item> STACK_OF_ALLOY_CHAIN =
+			ITEMS.register("stack_of_alloy_chain", () -> new Item(new Item.Properties()));
+
+	/** 合金锁链材料：由一叠合金锁链拆出的 24 份。 */
+	public static final DeferredItem<Item> ALLOY_CHAIN_MATERIAL =
+			ITEMS.register("alloy_chain_material", () -> new Item(new Item.Properties()));
+
+	// ---- 金锁链盔甲（金档，耐久系数 15 → 165/240/225/195）----
+	public static final DeferredItem<Item> GOLD_CHAIN_HELMET =
+			registerArmorWithDurability("gold_chain_helmet", ModArmorMaterials.GOLD_CHAIN,
+					ArmorItem.Type.HELMET, 165);
+	public static final DeferredItem<Item> GOLD_CHAIN_CHESTPLATE =
+			registerArmorWithDurability("gold_chain_chestplate", ModArmorMaterials.GOLD_CHAIN,
+					ArmorItem.Type.CHESTPLATE, 240);
+	public static final DeferredItem<Item> GOLD_CHAIN_LEGGINGS =
+			registerArmorWithDurability("gold_chain_leggings", ModArmorMaterials.GOLD_CHAIN,
+					ArmorItem.Type.LEGGINGS, 225);
+	public static final DeferredItem<Item> GOLD_CHAIN_BOOTS =
+			registerArmorWithDurability("gold_chain_boots", ModArmorMaterials.GOLD_CHAIN,
+					ArmorItem.Type.BOOTS, 195);
+
+	// ---- 钻石锁链盔甲（钻石档，耐久系数 33 → 363/528/495/429）----
+	public static final DeferredItem<Item> DIAMOND_CHAIN_HELMET =
+			registerArmorWithDurability("diamond_chain_helmet", ModArmorMaterials.DIAMOND_CHAIN,
+					ArmorItem.Type.HELMET, 363);
+	public static final DeferredItem<Item> DIAMOND_CHAIN_CHESTPLATE =
+			registerArmorWithDurability("diamond_chain_chestplate", ModArmorMaterials.DIAMOND_CHAIN,
+					ArmorItem.Type.CHESTPLATE, 528);
+	public static final DeferredItem<Item> DIAMOND_CHAIN_LEGGINGS =
+			registerArmorWithDurability("diamond_chain_leggings", ModArmorMaterials.DIAMOND_CHAIN,
+					ArmorItem.Type.LEGGINGS, 495);
+	public static final DeferredItem<Item> DIAMOND_CHAIN_BOOTS =
+			registerArmorWithDurability("diamond_chain_boots", ModArmorMaterials.DIAMOND_CHAIN,
+					ArmorItem.Type.BOOTS, 429);
+
+	// ---- 合金锁链盔甲（合金档，耐久系数 37 → 407/592/555/481）----
+	// 与模组其他合金系列一致：猪灵中立 + 抗火。
+	public static final DeferredItem<Item> ALLOY_CHAIN_HELMET =
+			registerPiglinNeutralFireResistantArmor("alloy_chain_helmet", ModArmorMaterials.ALLOY_CHAIN,
+					ArmorItem.Type.HELMET, 407);
+	public static final DeferredItem<Item> ALLOY_CHAIN_CHESTPLATE =
+			registerPiglinNeutralFireResistantArmor("alloy_chain_chestplate", ModArmorMaterials.ALLOY_CHAIN,
+					ArmorItem.Type.CHESTPLATE, 592);
+	public static final DeferredItem<Item> ALLOY_CHAIN_LEGGINGS =
+			registerPiglinNeutralFireResistantArmor("alloy_chain_leggings", ModArmorMaterials.ALLOY_CHAIN,
+					ArmorItem.Type.LEGGINGS, 555);
+	public static final DeferredItem<Item> ALLOY_CHAIN_BOOTS =
+			registerPiglinNeutralFireResistantArmor("alloy_chain_boots", ModArmorMaterials.ALLOY_CHAIN,
+					ArmorItem.Type.BOOTS, 481);
+
 	private ModItems() {
 	}
 
